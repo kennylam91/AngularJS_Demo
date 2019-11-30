@@ -6,6 +6,9 @@ angular.
                 when('/students', {
                     template: '<student-list></student-list>'
                 }).
-                otherwise('/students')
+                when('/students/:studentCode',{
+                    template:'<student-detail></student-detail>'
+                }).
+                otherwise('/students');
         }
-])
+]);
