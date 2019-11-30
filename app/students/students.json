@@ -1,0 +1,14 @@
+[
+    {
+        "code":"A01",
+        "firstName":"Pham",
+        "lastName":"Lam",
+        "age":20
+    },
+    {
+        "code":"A02",
+        "firstName":"Nguyen",
+        "lastName":"Thang",
+        "age":22
+    }
+]

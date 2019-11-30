@@ -1,0 +1,28 @@
+<div class="container">
+	<h3>Student list</h3>
+	<br />
+	<div class="row">
+		<p>
+			Search
+			<input ng-model = "$ctrl.query" />
+		</p>
+		
+		<table>
+			<tr>
+				<th>No</th>
+				<th ng-click="$ctrl.orderByMe('code')">Code</th>
+				<th ng-click="$ctrl.orderByMe('firstName')">Firstname</th>
+				<th ng-click="$ctrl.orderByMe('lastName')">Lastname</th>
+				<th ng-click="$ctrl.orderByMe('age')">Age</th>
+			</tr>
+			<tr ng-repeat="student in $ctrl.students | orderBy : $ctrl.myOrderBy | filter: $ctrl.query ">
+				<td>{{$index+1}}</td>
+				<td>{{student.code}}</td>
+				<td>{{student.firstName}}</td>
+				<td>{{student.lastName}}</td>
+				<td>{{student.age}}</td>
+				<td><a href="#!/phones/{{student.code}}" >Detail</a></td>
+			</tr>
+		</table>
+	</div>
+</div>
