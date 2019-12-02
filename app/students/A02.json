@@ -2,5 +2,6 @@
     "code":"A02",
     "firstName":"Nguyen",
     "lastName":"Thang",
-    "age":22
+    "age":22, 
+    "dob":"1992-05-04"
 }

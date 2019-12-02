@@ -1,12 +1,12 @@
-<div class="container">
+<div>
 	<h3>Student list</h3>
 	<br />
 	<div class="row">
 		<p>
 			Search
-			<input ng-model = "$ctrl.query" />
+			<input ng-model="$ctrl.query" />
 		</p>
-		
+
 		<table>
 			<tr>
 				<th>No</th>
@@ -14,6 +14,8 @@
 				<th ng-click="$ctrl.orderByMe('firstName')">Firstname</th>
 				<th ng-click="$ctrl.orderByMe('lastName')">Lastname</th>
 				<th ng-click="$ctrl.orderByMe('age')">Age</th>
+				<th ng-click="$ctrl.orderByMe('dob')">Dob</th>
+				<th>Detail</th>
 			</tr>
 			<tr ng-repeat="student in $ctrl.students | orderBy : $ctrl.myOrderBy | filter: $ctrl.query ">
 				<td>{{$index+1}}</td>
@@ -21,7 +23,8 @@
 				<td>{{student.firstName}}</td>
 				<td>{{student.lastName}}</td>
 				<td>{{student.age}}</td>
-				<td><a href="#!/students/{{student.code}}" >Detail</a></td>
+				<td> {{student.dob | date:'yyyy-MM-dd' }} </td>
+				<td><a href="#!/students/{{student.code}}">Detail</a></td>
 			</tr>
 		</table>
 	</div>
