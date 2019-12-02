@@ -5,9 +5,6 @@ angular.
         controller: ['$routeParams', 'StudentService',
             function StudentDetailController($routeParams, StudentService) {
                 let self = this;
-                StudentService.getStudentByCode($routeParams.studentCode).then(function(response){
-                    self.student = response.data;
-                })
-            
+                this.student = StudentService.getStudentByCode($routeParams.studentCode);
             }]
     });

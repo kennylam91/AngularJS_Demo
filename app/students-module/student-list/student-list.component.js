@@ -10,9 +10,7 @@ angular.
 				this.orderByMe = function (x) {
 					this.myOrderBy = x;
 				}
-				StudentService.getStudents().then(function(response){
-					self.students = response.data;
-				})
+				this.students = StudentService.getStudents();
 			}
 
 		]
