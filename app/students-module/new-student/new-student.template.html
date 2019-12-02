@@ -1,11 +1,19 @@
 <div>
     <h3>New Student</h3>
-    <form novalidate class="simple-form" >
-        <label for="">Code: <input type="text" ng-model= "$ctrl.newStudent.code"/></label><br/>
-        <label for="">Firstname: <input type="text" ng-model= "$ctrl.newStudent.firstName"/></label><br/>
-        <label for="">Lastname: <input type="text" ng-model= "$ctrl.newStudent.lastName"/></label><br/>
-        <label for="">Age: <input type="number" ng-model= "$ctrl.newStudent.age"/></label><br/>
-        <label for="">Date of birth: <input type="date" ng-model= "$ctrl.newStudent.dob"/></label><br/>
+    <form novalidate class="css-form" name="form" >
+        <label for="">Code: 
+            <input type="text" ng-model= "$ctrl.newStudent.code" name= "code" required /></label><br/>
+            <div ng-show= "form.$submitted || form.code.$touched" >
+                <div ng-show="form.code.$error.required">Code cannot be empty</div>
+            </div>
+        <label for="">Firstname: 
+            <input type="text" ng-model= "$ctrl.newStudent.firstName" required /></label><br/>
+        <label for="">Lastname: 
+            <input type="text" ng-model= "$ctrl.newStudent.lastName" required/></label><br/>
+        <label for="">Age: 
+            <input type="number" ng-model= "$ctrl.newStudent.age" required/></label><br/>
+        <label for="">Date of birth: 
+            <input type="date" ng-model= "$ctrl.newStudent.dob" required/></label><br/>
         <input type="button" ng-click= "$ctrl.reset()" value="Reset" >
         <input type="submit" ng-click= "$ctrl.create()" value="Create">
     </form>

@@ -3,14 +3,14 @@ angular.
 	module('students').
 	component('studentList', {
 		templateUrl: 'students-module/student-list/student-list.template.html',
-		controller: ['$http',
-			function StudentListController($http) {
+		controller: ['StudentService',
+			function StudentListController(StudentService) {
 				let self = this;
 				this.myOrderBy = 'age';
 				this.orderByMe = function (x) {
 					this.myOrderBy = x;
 				}
-				$http.get('students-module/students/students.json').then(function (response) {
+				StudentService.getStudents().then(function(response){
 					self.students = response.data;
 				})
 			}
