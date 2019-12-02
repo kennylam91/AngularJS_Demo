@@ -1,8 +1,8 @@
 //Register `studentList` component, along with its associated controller and template
 angular.
-	module('studentList').
+	module('students').
 	component('studentList', {
-		templateUrl: 'student-list/student-list.template.html',
+		templateUrl: 'students-module/student-list/student-list.template.html',
 		controller: ['$http',
 			function StudentListController($http) {
 				let self = this;
@@ -10,7 +10,7 @@ angular.
 				this.orderByMe = function (x) {
 					this.myOrderBy = x;
 				}
-				$http.get('students/students.json').then(function (response) {
+				$http.get('students-module/students/students.json').then(function (response) {
 					self.students = response.data;
 				})
 			}

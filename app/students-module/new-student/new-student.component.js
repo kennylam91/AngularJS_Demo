@@ -1,7 +1,7 @@
 angular.
-    module('newStudent').
+    module('students').
     component('newStudent', {
-        templateUrl:'new-student/new-student.template.html',
+        templateUrl:'students-module/new-student/new-student.template.html',
         controller: [function NewStudentController(){
             createStudent = function(){
                 console.log(this.newStudent);
